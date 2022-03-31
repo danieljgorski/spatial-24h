@@ -32,11 +32,12 @@ pdf(file = "results/basic-figures/SpatialFeaturePlot_UMI_count.pdf",
     height = 6,
     width = 12.75,
     useDingbats = F)
-SpatialFeaturePlotScaled(hearts,
+SpatialFeaturePlotScaled(object = hearts,
                          group = "surgery",
                          group.1 = "Sham",
                          group.2 = "IR",
                          feature_of_interest = "nCount_Spatial",
+                         from.meta.data = TRUE,
                          group.1.title = "Sham - 24 h",
                          group.2.title = "I/R - 24 h",
                          legend.title = "UMI count")
