@@ -10,7 +10,7 @@ This is a spatial transcriptomics project led by Dr. Katharina Botterman. It inc
 </p>
 
 <p float="left">
-  <img src="/images/SpatialFeaturePlot_Ccl6.png" width="100" />
-  <img src="/images/SpatialFeaturePlot_Ccl6.png" width="100" />
-  <img src="/images/SpatialFeaturePlot_Ccl6.png" width="100" />
+  <img src="/images/SpatialFeaturePlot_Ccl6.png" width="333" />
+  <img src="/images/SpatialFeaturePlot_Ccl6.png" width="333" />
+  <img src="/images/SpatialFeaturePlot_Ccl6.png" width="333" />
 </p>
