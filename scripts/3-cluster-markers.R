@@ -24,24 +24,29 @@ top_100_cluster_markers <- cluster_markers %>%
   group_by(cluster) %>%
   top_n(n = 100, wt = avg_log2FC)
 write.csv(cluster_markers,
-          file = "results/cluster-markers/cluster_markers.csv",
-          row.names = F)
+  file = "results/cluster-markers/cluster_markers.csv",
+  row.names = F
+)
 
 # SpatialFeaturePlots of top 10 cluster markers
 genes <- top_10_cluster_markers$gene
 for (i in genes) {
-  pdf(file = paste0("results/cluster-markers/SpatialFeaturePlot_", i, ".pdf"),
-      height = 6,
-      width = 12.75,
-      useDingbats = F)
-  SpatialFeaturePlotScaled(object = hearts,
-                           group = "surgery",
-                           group.1 = "Sham",
-                           group.2 = "IR",
-                           feature_of_interest = i,
-                           from.meta.data = FALSE,
-                           group.1.title = "Sham - 24 h",
-                           group.2.title = "I/R - 24 h")
+  pdf(
+    file = paste0("results/cluster-markers/SpatialFeaturePlot_", i, ".pdf"),
+    height = 6,
+    width = 12.75,
+    useDingbats = F
+  )
+  SpatialFeaturePlotScaled(
+    object = hearts,
+    group = "surgery",
+    group.1 = "Sham",
+    group.2 = "IR",
+    feature_of_interest = i,
+    from.meta.data = FALSE,
+    group.1.title = "Sham - 24 h",
+    group.2.title = "I/R - 24 h"
+  )
   dev.off()
 }
 
@@ -49,10 +54,12 @@ for (i in genes) {
 top_5_cluster_markers <- cluster_markers %>%
   group_by(cluster) %>%
   top_n(n = 5, wt = avg_log2FC)
-pdf(file = "results/cluster-markers/DotPlot_top_5_cluster_markers.pdf",
-    height = 6,
-    width = 12,
-    useDingbats = F)
+pdf(
+  file = "results/cluster-markers/DotPlot_top_5_cluster_markers.pdf",
+  height = 6,
+  width = 12,
+  useDingbats = F
+)
 DotPlot(hearts, features = unique(top_5_cluster_markers$gene)) +
   RotatedAxis() +
   ylab("Cluster") +
@@ -61,19 +68,22 @@ DotPlot(hearts, features = unique(top_5_cluster_markers$gene)) +
 dev.off()
 
 # Heatmap
-pdf(file = "results/cluster-markers/Heatmap_top_30_cluster_markers.pdf",
-    height = 8,
-    width = 6,
-    useDingbats = F)
+pdf(
+  file = "results/cluster-markers/Heatmap_top_30_cluster_markers.pdf",
+  height = 8,
+  width = 6,
+  useDingbats = F
+)
 top_30_cluster_markers <- cluster_markers %>%
   group_by(cluster) %>%
   top_n(n = 30, wt = avg_log2FC)
 heatmap_genes <- unique(top_30_cluster_markers$gene)
 DoHeatmap(hearts,
-          features = heatmap_genes,
-          assay = "Spatial",
-          angle = 0,
-          size = 3.5) +
+  features = heatmap_genes,
+  assay = "Spatial",
+  angle = 0,
+  size = 3.5
+) +
   ylab("Marker genes") +
   scale_color_manual(values = default_colors) +
   theme(axis.text.y = element_blank()) +
@@ -86,13 +96,18 @@ for (i in unique(cluster_markers$cluster)) {
   p <- GOBP_fold_enrich(
     rownames(hearts),
     genes,
-    paste0("GO Biological Processes Overrepresentation: Cluster ",
-    i,
-    " Markers"))
-  pdf(file = paste0("results/cluster-markers/GOBP_Overrep_Cluster_", i, ".pdf"),
-      height = 6,
-      width = 10,
-      useDingbats = F)
+    paste0(
+      "GO Biological Processes Overrepresentation: Cluster ",
+      i,
+      " Markers"
+    )
+  )
+  pdf(
+    file = paste0("results/cluster-markers/GOBP_Overrep_Cluster_", i, ".pdf"),
+    height = 6,
+    width = 10,
+    useDingbats = F
+  )
   print(p)
   dev.off()
 }
