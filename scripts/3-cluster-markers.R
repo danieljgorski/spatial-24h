@@ -3,7 +3,6 @@ library(Seurat) # v4.0.1
 library(ggplot2)
 library(patchwork)
 library(scales)
-library(RColorBrewer)
 library(dplyr)
 library(yulab.utils)
 library(clusterProfiler)
