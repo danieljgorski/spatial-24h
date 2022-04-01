@@ -28,9 +28,9 @@ write.csv(cluster_markers,
           row.names = F)
 
 # SpatialFeaturePlots of top 10 cluster markers
-GOI <- top_10_cluster_markers$gene
-for (i in GOI) {
-  pdf(file = paste0("results/cluster-markers/SpatialFeaturePlot_", i,".pdf"),
+genes <- top_10_cluster_markers$gene
+for (i in genes) {
+  pdf(file = paste0("results/cluster-markers/SpatialFeaturePlot_", i, ".pdf"),
       height = 6,
       width = 12.75,
       useDingbats = F)
@@ -53,11 +53,11 @@ pdf(file = "results/cluster-markers/DotPlot_top_5_cluster_markers.pdf",
     height = 6,
     width = 12,
     useDingbats = F)
-DotPlot(hearts, features = unique(top_5_cluster_markers$gene)) + 
+DotPlot(hearts, features = unique(top_5_cluster_markers$gene)) +
   RotatedAxis() +
   ylab("Cluster") +
   xlab("Marker genes") +
-  theme(axis.text.x = element_text(face = "italic")) 
+  theme(axis.text.x = element_text(face = "italic"))
 dev.off()
 
 # Heatmap
@@ -69,24 +69,26 @@ top_30_cluster_markers <- cluster_markers %>%
   group_by(cluster) %>%
   top_n(n = 30, wt = avg_log2FC)
 heatmap_genes <- unique(top_30_cluster_markers$gene)
-DoHeatmap(hearts, 
-          features = heatmap_genes, 
+DoHeatmap(hearts,
+          features = heatmap_genes,
           assay = "Spatial",
           angle = 0,
           size = 3.5) +
   ylab("Marker genes") +
   scale_color_manual(values = default_colors) +
   theme(axis.text.y = element_blank()) +
-  labs(color = "Cluster") 
+  labs(color = "Cluster")
 dev.off()
 
 # Gene ontology biological processes over representation test
 for (i in unique(cluster_markers$cluster)) {
-  GOI <- cluster_markers[cluster_markers$cluster == i,]$gene
+  genes <- cluster_markers[cluster_markers$cluster == i, ]$gene
   p <- GOBP_fold_enrich(
     rownames(hearts),
-    GOI,
-    paste0("GO Biological Processes Overrepresentation: Cluster ",i, " Markers"))
+    genes,
+    paste0("GO Biological Processes Overrepresentation: Cluster ",
+    i,
+    " Markers"))
   pdf(file = paste0("results/cluster-markers/GOBP_Overrep_Cluster_", i, ".pdf"),
       height = 6,
       width = 10,
