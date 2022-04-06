@@ -1,8 +1,6 @@
 # This function adapts the SpatialFeaturePlot() function, but ensures that
-# features with different scales on two separate images are plotted with the same scale.
-# this is specially adapted for spatial-transcriptomics-24h-IR using "Sham",
-# and "IR" images. Further adapted for gene signatures, removes extra "1" added
-# by Seurat when naming meta.data columns.
+# features with different scales on separate images are plotted with the
+# same scale. Further adapted for gene signatures.
 
 SpatialFeaturePlotScaledSig <- function(object,
                                         group,
