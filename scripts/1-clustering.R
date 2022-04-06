@@ -71,7 +71,7 @@ hearts <- ScaleData(hearts, features = all_genes)
 
 # Set variable features in SCT assay, because merge wasn't used
 DefaultAssay(hearts) <- "SCT"
-VariableFeatures(hearts) <- c(VariableFeatures(C1), VariableFeatures(D1))
+VariableFeatures(hearts) <- c(VariableFeatures(c1_sham), VariableFeatures(d1_ir))
 
 ## Factor surgery variable, save clustered object----
 hearts@meta.data$surgery <- factor(hearts@meta.data$surgery,
