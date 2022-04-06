@@ -47,7 +47,7 @@ for (i in genes) {
 }
 
 # VlnPlots
-for (i in GOI) {
+for (i in genes) {
   pdf(
     file = paste0("results/genes-of-interest/VlnPlot_", i, ".pdf"),
     height = 6,
