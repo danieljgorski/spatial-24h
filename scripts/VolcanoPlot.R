@@ -1,7 +1,7 @@
 # This produces a Volcano plot with statistically significant p < 0.01 genes
 # colored red (up-regulated) and blue (down-regulated). The top 20 most
 # statistically significant and top 20 most highly regulated genes
-# with an absolute average log2  fold change above 0.25  are labeled with
+# with an absolute average log2 fold change above 0.25 are labeled with
 # their gene symbol.
 
 # Input data is a dataframe from the Seurat FindMarkers output (with extra
@@ -33,7 +33,6 @@ VolcanoPlot <- function(df, identity, title) {
   deg_down_sig_fc_top20fc <- deg_down_sig_fc %>% slice_min(avg_log2FC, n = 20)
   deg_down_tops <- rbind(deg_down_sig_fc_top20sig, deg_down_sig_fc_top20fc)
   deg_down_tops <- distinct(deg_down_tops)
-
 
   # volcano plot
   vp <- ggplot(

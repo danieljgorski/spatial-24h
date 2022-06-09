@@ -22,7 +22,10 @@ genes <- c(
   "Tcf21", "Pdgfra", "Postn", "Cthrc1", "Pecam1",
   "Adgre1", "Cx3cr1", "S100a8", "S100a9", "Ccr1", "Csf3r",
   "Cd3e", "Cd79a", "Ppard", "Pparg", "Lipa", "Plin3",
-  "Slc2a1", "Myh7", "Map1lc3b"
+  "Slc2a1", "Myh7", "Map1lc3b", "Ccl6", "Ccl9", "Thbs1",
+  "Ccl2", "Il1b", "Ccl7", "Pf4", "Cxcl2", "Ppbp", "Ednrb",
+  "Ccl7", "Ccl8", "Adipor1", "Adipor2", "Lepr", "Leprot",
+  "Leprotl1", "Lep", "Snx1", "Snx2", "Snx4"
 )
 
 # SpatialFeaturePlots
