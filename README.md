@@ -1,6 +1,6 @@
 # spatial-24h
 
-This is a spatial transcriptomics project led by Dr. Katharina Botterman. It includes 10x Genomics Visium data of cardiac tissue 24 h after ischemia/reperfusion injury or sham surgery, from wildtype mice.
+This is a spatial transcriptomics project led by [Dr. Katharina Botterman](mailto:katharina.bottermann@hhu.de). It includes 10x Genomics Visium data of cardiac tissue 24 h after ischemia/reperfusion injury or sham surgery, from wildtype mice.
 
 ## Sequencing data
 Sequencing data, including fastq files and count matrices will be available upon publication or request.
@@ -45,6 +45,9 @@ By starting your R session with the R project file, `spatial-24h.Rproj`, your wo
 `0-full-analysis.R` will create all necessary directories and run the full analysis in the appropriate order. Each analysis step can also be run individually for better interactivity, starting from `1-clustering.R`.
 
 ## Examples
+<p align="center">
+  <img src="/examples/SpatialFeaturePlot_UMI_count.png" width="1000">
+</p>
 <p align="center">
   <img src="/examples/SpatialDimPlot.png" width="1000">
 </p>
