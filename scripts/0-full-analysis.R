@@ -3,13 +3,6 @@ output_dirs <- c(
   "results",
   "results/basic-figures",
   "results/cluster-markers",
-  "results/collaborations",
-  "results/collaborations/A01",
-  "results/collaborations/AG-Schrader",
-  "results/collaborations/Alexander-Lang",
-  "results/collaborations/Alexander-Lang/cluster-marker-signatures",
-  "results/collaborations/Alexander-Lang/reference-mapping",
-  "results/collaborations/Alexander-Lang/reference-mapping/day5",
   "results/differential-abundance",
   "results/differential-gene-expression",
   "results/differential-gene-expression/remote-clusters",
@@ -41,7 +34,4 @@ source("scripts/7-differential-abundance.R")
 source("scripts/8-differential-gene-expression.R")
 source("scripts/9-remote-zone-analysis.R")
 source("scripts/10-reference-mapping.R")
-source("scripts/11-collaboration-A01.R")
-source("scripts/12-collaboration-AG-Schrader.R")
-source("scripts/13-collaboration-Alexander-Lang.R")
 print("Full analysis complete")
