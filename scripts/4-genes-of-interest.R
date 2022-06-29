@@ -25,7 +25,7 @@ genes <- c(
   "Slc2a1", "Myh7", "Map1lc3b", "Ccl6", "Ccl9", "Thbs1",
   "Ccl2", "Il1b", "Ccl7", "Pf4", "Cxcl2", "Ppbp", "Ednrb",
   "Ccl7", "Ccl8", "Adipor1", "Adipor2", "Lepr", "Leprot",
-  "Leprotl1", "Lep", "Snx1", "Snx2", "Snx4"
+  "Leprotl1", "Lep", "Snx1", "Snx2", "Snx4", "Il4ra"
 )
 
 # SpatialFeaturePlots
