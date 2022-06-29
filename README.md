@@ -36,6 +36,8 @@ Additionally, the following standard R libraries were used:
 * scales
 * readr
 * ggrepel
+* rstudioapi
+* shiny
 
 ### Instructions
 To reproduce the analysis, clone this repository and place the spaceranger outputs inside the project folder under a sub-folder titled data. i.e. `spatial-24h/data/spaceranger`
